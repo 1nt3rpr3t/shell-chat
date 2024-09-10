@@ -39,6 +39,7 @@ class ChatServer:
                 if message == "exit":
                     break
                 await self.broadcast(f"{name}: {message}")
+                print(f"{name}: {message}")
         except websockets.exceptions.ConnectionClosedError:
             print(f"{name} has leave...")
         except Exception as e:
