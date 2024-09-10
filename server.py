@@ -17,7 +17,6 @@ class ChatServer:
     async def unregister(self, name):
         del self.clients[name]
         await self.broadcast(f"{name} has leave...")
-        print(f"{name} has leave...")
 
     async def broadcast(self, message):
         for client in self.clients.values():
